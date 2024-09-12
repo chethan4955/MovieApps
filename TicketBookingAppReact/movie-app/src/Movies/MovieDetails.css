@@ -1,0 +1,82 @@
+
+
+/* Container for movie detail view */
+.movie-detail-containers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+/* Card styling for movie details */
+.movie-card-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+  width: 100%;
+  height: fit-content;
+  background-color: #e63e3e;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+/* Movie image styling */
+.movie-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Movie title styling */
+.movie-detail-information h2 {
+  color: #333;
+  margin-top: 15px;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Movie detail text styling */
+.movie-detail-information p {
+  color: #555;
+  margin: 10px 0;
+}
+
+/* Showtime list styling */
+.movie-showtimes ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.movie-showtimes li {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.movie-showtimes p {
+  margin: 5px 0;
+}
+
+/* Button styling */
+.book-tickets-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.book-tickets-btn:hover {
+  background-color: #0056b3;
+}
+

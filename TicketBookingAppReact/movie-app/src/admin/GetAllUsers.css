@@ -1,0 +1,54 @@
+
+
+/* Styles for the container */
+.users-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Single card for listing all users */
+.users-card {
+    background-color: rgb(25, 227, 143);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+  
+}
+
+/* Table styles */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.user-table th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+/* Delete button */
+#delete1-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for Delete button */
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+
+

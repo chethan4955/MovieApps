@@ -1,0 +1,22 @@
+
+/* index.css or App.css */
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the App covers the full viewport height */
+  }
+  
+  main {
+    flex: 1; /* Allows the main content to grow and fill the remaining space */
+    padding: 20px; /* Adds padding around the main content */
+  }
+  
+  .footer {
+    background-color: #f8f9fa; /* Light background color for the footer */
+    padding: 10px; /* Padding inside the footer */
+    text-align: center; /* Center-aligns text */
+    border-top: 1px solid #dee2e6; /* Adds a border on top of the footer */
+  }
+  
+  

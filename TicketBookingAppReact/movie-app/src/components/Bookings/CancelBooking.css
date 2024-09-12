@@ -1,0 +1,33 @@
+
+
+/* Center the card with margin and padding */
+.cancel-booking-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px); /* Adjust based on your navbar/footer height */
+    padding: 20px;
+  }
+  
+  /* Style the card */
+  .cancel-booking-card {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .cancel-booking-card {
+      margin: 10px;
+      padding: 15px;
+    }
+  }
+  
+  /* Style the message text */
+  .message-text {
+    color: #d9534f; /* Bootstrap's danger color */
+    font-weight: bold;
+  }
+  
+  

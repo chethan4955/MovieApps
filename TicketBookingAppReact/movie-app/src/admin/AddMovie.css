@@ -1,0 +1,112 @@
+/* 
+
+/* AddMovie.css */
+
+/* Container */
+#add-movie-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1ccf78; /* Form background color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(14, 127, 149, 0.1);
+  }
+  
+  /* Title */
+  #add-movie-title {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  /* Form */
+  #add-movie-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Form Group */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Labels */
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Input and Textarea */
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+  }
+  
+  /* Show Times */
+  #show-times-group {
+    margin-bottom: 15px;
+  }
+  
+  .show-time-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .show-time-group input {
+    margin-right: 10px;
+    flex: 1;
+  }
+  
+  .remove-btn,
+  .add-show-time-btn,
+  .submit-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .remove-btn {
+    background-color: #dc3545; /* Remove button color */
+  }
+  
+  .remove-btn:hover {
+    background-color: #c82333; /* Remove button hover color */
+  }
+  
+  .add-show-time-btn {
+    background-color: #007bff; /* Add Show Time button color */
+    margin-top: 10px;
+  }
+  
+  .add-show-time-btn:hover {
+    background-color: #0056b3; /* Add Show Time button hover color */
+  }
+  
+  .submit-btn {
+    background-color: #28a745; /* Submit button color */
+  }
+  
+  .submit-btn:hover {
+    background-color: #218838; /* Submit button hover color */
+  }
+  
+  /* Error Message */
+  #error-message {
+    color: #dc3545; /* Error message color */
+    margin-top: 10px;
+  }
+   

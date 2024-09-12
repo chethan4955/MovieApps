@@ -1,0 +1,77 @@
+
+/* General form styles */
+.booking-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #13c7a0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #17c996;
+}
+
+/* Form field container */
+.booking-form div {
+    margin-bottom: 15px;
+}
+
+/* Form labels */
+.booking-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Form inputs */
+.booking-form input[type="text"],
+.booking-form input[type="number"],
+.booking-form input[type="datetime-local"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Submit button */
+.booking-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Button hover effect */
+.booking-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .booking-form {
+        padding: 15px;
+        /* Optionally adjust max-width for smaller screens */
+        max-width: 100%;
+    }
+
+    .booking-form button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .booking-form {
+        padding: 10px;
+        /* Reduce margin for very small screens */
+        margin: 0 10px;
+    }
+
+    .booking-form button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

@@ -1,0 +1,162 @@
+/* Container for the whole booking section */
+#booking-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #e0d9d9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Button style */
+#get-booking-btn {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+#get-booking-btn:hover {
+    background-color: #218838; /* Correct color for hover state */
+}
+
+/* Error message style */
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Booking details container */
+#booking-details-container {
+    width: 100%;
+}
+
+/* Booking cards container */
+#booking-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual booking card */
+.booking-card {
+    background-color: #f0f5f3;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width by default */
+    max-width: 600px; /* Max width for larger screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+/* Booking content area */
+.booking-content {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* QR code area */
+.booking-qr {
+    margin-top: 10px; /* Adjusted for small screens */
+    width: 100%; /* Full width by default */
+    display: flex;
+    justify-content: center; /* Center QR code */
+}
+
+/* Labels for each booking detail */
+.booking-label {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Information for each booking detail */
+.booking-info {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Booking actions */
+.booking-actions {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%; /* Full width */
+}
+
+/* Buttons */
+.edit-btn, .delete-btn {
+    padding: 10px 20px; /* Adjusted padding for better responsiveness */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem; /* Slightly smaller font size */
+}
+
+.edit-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Media queries for responsive design */
+@media (min-width: 768px) {
+    .booking-card {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .booking-content {
+        width: 70%;
+    }
+
+    .booking-qr {
+        width: 25%; /* Slightly larger on medium screens */
+    }
+
+    .booking-actions {
+        flex-direction: row; /* Stack buttons horizontally on larger screens */
+    }
+}
+
+/* Media query for very large screens */
+@media (min-width: 1200px) {
+    #booking-container {
+        padding: 30px;
+    }
+
+    #get-booking-btn {
+        padding: 12px 24px;
+        font-size: 1.125rem;
+    }
+
+    .booking-card {
+        max-width: 800px; /* Increase max width for very large screens */
+    }
+
+    .booking-content {
+        width: 75%;
+    }
+
+    .booking-qr {
+        width: 20%; /* Adjust size on very large screens */
+    }
+}

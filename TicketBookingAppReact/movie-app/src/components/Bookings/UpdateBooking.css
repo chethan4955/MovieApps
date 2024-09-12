@@ -1,0 +1,90 @@
+/* UpdateBooking.css */
+#UpdateBooking-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#UpdateBooking-formGroup {
+  margin-bottom: 20px;
+}
+
+#UpdateBooking-formLabel {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#UpdateBooking-formControl {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#UpdateBooking-formControl:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#UpdateBooking-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+#UpdateBooking-button:hover {
+  background-color: #0056b3;
+}
+
+#UpdateBooking-alert {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+#UpdateBooking-alert-danger {
+  background-color: #f44336;
+  color: #fff;
+}
+
+#UpdateBooking-alert-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  #UpdateBooking-container {
+    padding: 10px;
+  }
+
+  #UpdateBooking-formControl {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  #UpdateBooking-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #UpdateBooking-container {
+    padding: 5px;
+  }
+
+  #UpdateBooking-formControl {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  #UpdateBooking-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,38 @@
+#movie-list-containers {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  #movie-card {
+    flex: 0 0 auto; /* Ensures cards don't shrink or grow */
+  width: 300px; /* Adjust the width to be smaller */
+  margin: 10px;
+  height: 500px; /* Adjust the height to fit the smaller width */
+  padding: 10px; /* Reduce padding */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  }
+  
+  #img {
+    width: 100%;
+  height: 300px; /* Adjust the height of the image */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 4px; /* Slightly rounded corners */
+  }
+  
+  #button {
+    background-color: #fe1010;
+    color: white;
+    border: none;
+    padding: 8px 12px; /* Reduce padding */
+    font-size: 12px; /* Adjust font size */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  

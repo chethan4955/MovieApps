@@ -1,0 +1,70 @@
+/* Ensure all nav items stay on a single line without hiding any text */
+.navbar-nav {
+  display: flex;            /* Use flexbox for alignment */
+  justify-content: flex-start;  /* Align items to the left */
+  flex-wrap: nowrap;        /* Prevent items from wrapping */
+  gap: 15px;                /* Space between nav items */
+}
+
+/* Search button styling */
+.search-button {
+  margin-left: 5px;
+  color: #fff;              /* White text color */
+  background-color: #007bff; /* Bootstrap primary blue */
+  border: none;
+  padding: 5px 10px;        /* Add padding to the button */
+  border-radius: 5px;       /* Rounded corners */
+  cursor: pointer;          /* Pointer cursor for better UX */
+}
+
+/* Change color on hover */
+.search-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Ensure individual nav items don't wrap */
+.nav-item {
+  white-space: nowrap;      /* Prevent text from wrapping */
+  margin-right: 5px;       /* Add spacing between items */
+  display: inline-block;    /* Behave like a block for better control */
+}
+
+/* Search bar styling */
+.search-bar {
+  display: flex;
+  width: 300px;
+  align-items: center;
+  margin-right: 15px;      /* Adjust for space between the search bar and items */
+}
+
+/* Adjust for responsive design */
+@media (max-width: 992px) {
+  .navbar-nav {
+    flex-wrap: wrap;        /* Allow wrapping on smaller screens */
+    justify-content: flex-start; /* Align items to the left on smaller screens */
+  }
+
+  .search-bar {
+    width: 100%; /* Make search bar full width on smaller screens */
+    margin-bottom: 10px;    /* Add spacing for search bar on smaller screens */
+  }
+}
+
+/* Extra small screens (like mobile) */
+@media (max-width: 576px) {
+  .navbar-nav {
+    flex-direction: column; /* Stack nav items vertically */
+    align-items: flex-start; /* Align items to the left */
+    gap: 10px; /* Space between items */
+  }
+
+  .search-bar {
+    width: 100%; /* Full width on extra small screens */
+    margin-bottom: 10px; /* Space between search bar and items */
+  }
+
+  .nav-item {
+    margin-right: 0; /* Remove right margin on small screens */
+    text-align: left; /* Align text to the left */
+  }
+}
