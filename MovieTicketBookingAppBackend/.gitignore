@@ -1,0 +1,21 @@
+# Build folders
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Node
+node_modules/
+
+# Environment
+.env
+.env.*
+
+# ASP.NET
+appsettings.Development.json

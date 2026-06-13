@@ -24,7 +24,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import CancelBooking from './components/Bookings/CancelBookingComponent';
 import './App.css';
-
+import SeatSelector from './components/Bookings/SeatSelector';
 import Bookings from './admin/BookingsViews';
 import GetAllUsers from './admin/GetAllUsers';
 import ContactForm from './components/ContactForm';
@@ -55,7 +55,7 @@ function App() {
             <Route path='/contact' element={<ContactForm/>}/>
             <Route path='/admin/BookingViews' element={<Bookings/>}/>
             <Route path='/admin/UserDetails' element={<GetAllUsers/>}/>
-          
+          <Route path="/bookings/:movieId/seats" element={<SeatSelector  />} />
            <Route path='/admin/UserAnalysis' element={<UserAnalysis/>}/> 
 
           </Routes>

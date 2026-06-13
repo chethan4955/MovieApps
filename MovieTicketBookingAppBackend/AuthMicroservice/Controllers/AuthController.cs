@@ -191,5 +191,11 @@ namespace AuthMicroservice.Controllers
 
             return string.Join(Environment.NewLine, errors);
         }
+        [HttpGet("count")]
+        public async Task<IActionResult> GetUserCount()
+        {
+            var count = await _context.Users.CountAsync();
+            return Ok(new { Count = count });
+        }
     }
 }

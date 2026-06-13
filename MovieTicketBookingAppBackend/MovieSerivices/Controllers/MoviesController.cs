@@ -97,6 +97,12 @@ namespace MovieSerivices.Controllers
 
             return NoContent(); // Return 204 No Content if the deletion was successful
         }
+        [HttpGet("count")]
+        public async Task<IActionResult> GetMovieCount()
+        {
+            var count = await _movieService.GetMovieCountAsync();
+            return Ok(new { Count = count });
+        }
 
     }
 }

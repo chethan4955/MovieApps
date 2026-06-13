@@ -68,5 +68,19 @@ namespace BookingService.Service
          var result = await _context.Bookings.UpdateOneAsync(b => b.Username == username, update);
          return result.ModifiedCount > 0;
         }
+
+        public void GetBookingsByUserIdAsync(int userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        //internal async Task GetBookingCountAsync()
+        //{
+        //    throw new NotImplementedException();
+        //}
+        public virtual async Task<long> GetBookingCountAsync()
+        {
+            return await _context.Bookings.CountDocumentsAsync(_ => true);
+        }
     }
 }

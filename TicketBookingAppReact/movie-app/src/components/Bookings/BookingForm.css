@@ -1,77 +1,264 @@
+/* ── BookingForm.css ─────────────────────────────────────────── */
 
-/* General form styles */
-.booking-form {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #13c7a0;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #17c996;
+.bf-root {
+  min-height: 100vh;
+  background: #0f0f13;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  padding: 32px 16px;
 }
 
-/* Form field container */
-.booking-form div {
-    margin-bottom: 15px;
+/* Step Indicator */
+.bf-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 36px;
+  gap: 0;
 }
 
-/* Form labels */
-.booking-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+.bf-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
 }
 
-/* Form inputs */
-.booking-form input[type="text"],
-.booking-form input[type="number"],
-.booking-form input[type="datetime-local"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+.bf-step-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid #2e2e3a;
+  background: #18181f;
+  color: #555;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
 }
 
-/* Submit button */
-.booking-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+.bf-step--active .bf-step-circle {
+  border-color: #e63946;
+  background: #e63946;
+  color: white;
 }
 
-/* Button hover effect */
-.booking-form button:hover {
-    background-color: #0056b3;
+.bf-step--done .bf-step-circle {
+  border-color: #3dbb8f;
+  background: #3dbb8f;
+  color: white;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .booking-form {
-        padding: 15px;
-        /* Optionally adjust max-width for smaller screens */
-        max-width: 100%;
-    }
-
-    .booking-form button {
-        font-size: 14px;
-    }
+.bf-step-label {
+  font-size: 11px;
+  color: #444;
+  letter-spacing: 0.5px;
 }
 
-@media (max-width: 480px) {
-    .booking-form {
-        padding: 10px;
-        /* Reduce margin for very small screens */
-        margin: 0 10px;
-    }
+.bf-step--active .bf-step-label { color: #e0e0e0; }
+.bf-step--done .bf-step-label   { color: #3dbb8f; }
 
-    .booking-form button {
-        font-size: 14px;
-        padding: 8px;
-    }
+.bf-step-line {
+  flex: 1;
+  height: 2px;
+  background: #2e2e3a;
+  margin: 0 8px;
+  margin-bottom: 17px;
+  max-width: 80px;
+  transition: background 0.3s;
+}
+
+.bf-step-line--done {
+  background: #3dbb8f;
+}
+
+/* Card */
+.bf-card {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #18181f;
+  border: 1px solid #2a2a35;
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.bf-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #e8e8e8;
+  margin-bottom: 24px;
+  letter-spacing: -0.3px;
+}
+
+/* Fields */
+.bf-field {
+  margin-bottom: 18px;
+}
+
+.bf-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.bf-input,
+.bf-select {
+  width: 100%;
+  padding: 12px 14px;
+  background: #111118;
+  border: 1px solid #2a2a35;
+  border-radius: 10px;
+  color: #e0e0e0;
+  font-size: 14px;
+  transition: border-color 0.2s;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.bf-input:focus,
+.bf-select:focus {
+  border-color: #e63946;
+}
+
+.bf-select option {
+  background: #18181f;
+}
+
+/* Messages */
+.bf-msg {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+.bf-msg--success { background: #0a2a1f; color: #3dbb8f; border: 1px solid #1a5a3a; }
+.bf-msg--error   { background: #2a0f10; color: #e63946; border: 1px solid #5a1a1f; }
+
+/* Buttons */
+.bf-btn {
+  padding: 13px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s, opacity 0.2s;
+  border: none;
+  outline: none;
+}
+
+.bf-btn--primary {
+  background: #e63946;
+  color: white;
+  width: 100%;
+}
+.bf-btn--primary:hover:not(:disabled) { background: #c5232f; transform: translateY(-1px); }
+.bf-btn--primary:active:not(:disabled){ transform: translateY(0); }
+.bf-btn--primary:disabled { background: #2a2a35; color: #444; cursor: not-allowed; }
+
+.bf-btn--ghost {
+  background: transparent;
+  color: #888;
+  border: 1px solid #2a2a35;
+}
+.bf-btn--ghost:hover:not(:disabled) { background: #1f1f28; color: #ccc; }
+.bf-btn--ghost:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Back button */
+.bf-back-btn {
+  background: transparent;
+  border: none;
+  color: #666;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 8px;
+  display: block;
+}
+.bf-back-btn:hover { color: #aaa; }
+
+/* Seat stage */
+.bf-seat-stage {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Summary */
+.bf-summary {
+  border: 1px solid #2a2a35;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.bf-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 16px;
+  border-bottom: 1px solid #1e1e28;
+  gap: 12px;
+}
+.bf-summary-row:last-child { border-bottom: none; }
+
+.bf-summary-row--total {
+  background: #111118;
+}
+
+.bf-summary-key {
+  font-size: 13px;
+  color: #555;
+  flex-shrink: 0;
+}
+
+.bf-summary-val {
+  font-size: 14px;
+  color: #d0d0d0;
+  text-align: right;
+  word-break: break-all;
+}
+
+.bf-seats-val {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.bf-total-val {
+  font-size: 18px;
+  font-weight: 700;
+  color: #e63946;
+}
+
+/* Badges */
+.bf-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: capitalize;
+}
+.bf-badge--platinum { background: #2c2260; color: #b0a8f0; }
+.bf-badge--gold     { background: #2e1f00; color: #e8a020; }
+.bf-badge--silver   { background: #0a2a1f; color: #3dbb8f; }
+
+/* Confirm actions */
+.bf-confirm-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.bf-confirm-actions .bf-btn--ghost { flex: 0 0 auto; }
+.bf-confirm-actions .bf-btn--primary { flex: 1; }
+
+/* Responsive */
+@media (max-width: 500px) {
+  .bf-card { padding: 20px 16px; }
+  .bf-confirm-actions { flex-direction: column-reverse; }
+  .bf-confirm-actions .bf-btn--primary,
+  .bf-confirm-actions .bf-btn--ghost { width: 100%; }
 }
