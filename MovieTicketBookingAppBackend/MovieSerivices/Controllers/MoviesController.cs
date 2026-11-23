@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MovieSerivices.DTOs;
 using MovieSerivices.Services;
 
@@ -56,7 +57,7 @@ namespace MovieSerivices.Controllers
 
         // POST /movies
         [HttpPost]
-        /*[Authorize(Roles = "Admin")]*/ // Only admins can add movies
+        [Authorize(Roles = "Admin")] // Only admians can add movies
         public async Task<IActionResult> AddMovie([FromBody] CreateMovieDto createMovieDto)
         {
             var movie = await _movieService.AddMovieAsync(createMovieDto);
@@ -65,7 +66,7 @@ namespace MovieSerivices.Controllers
 
         // PUT /api/movies/{id}
         [HttpPut("{id}")]
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateMovie(int id, [FromBody] MovieUpdateDto updateDto)
         {
             if (!ModelState.IsValid)
@@ -85,14 +86,14 @@ namespace MovieSerivices.Controllers
 
         // DELETE /api/movies/{id}
         [HttpDelete("{id}")]
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteMovie(int id)
         {
             var result = await _movieService.DeleteMovieAsync(id);
 
             if (!result)
             {
-                return NotFound("Movie not found");
+                return NotFound("Movie not foundsgafdghafajdaj");
             }
 
             return NoContent(); // Return 204 No Content if the deletion was successful

@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using MovieSerivices.Data;
 using MovieSerivices.Services;
-
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 namespace MovieSerivices
 {
     public class Program
@@ -27,10 +29,43 @@ namespace MovieSerivices
 
             builder.Services.AddScoped<MoviesService>();
 
+
+            // 1. Read JWT key from appsettings.json
+            var jwtKey = builder.Configuration["Jwt:Key"];
+
+            // 2. Configure JWT authentication
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme =
+                    JwtBearerDefaults.AuthenticationScheme;
+
+                options.DefaultChallengeScheme =
+                    JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters =
+                    new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey =
+                            new SymmetricSecurityKey(
+                                Encoding.UTF8.GetBytes(jwtKey!)
+                            ),
+
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
+                        ValidateLifetime = true
+                    };
+            });
+
+
             builder.Services.AddAuthorization(options =>
             {
-                options.AddPolicy("AdminPolicy", policy => policy.RequireRole("Admin"));
+                options.AddPolicy("AdminPolicy",
+                    policy => policy.RequireRole("Admin"));
             });
+
 
             var app = builder.Build();
 
